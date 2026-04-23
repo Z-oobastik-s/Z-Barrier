@@ -1,0 +1,59 @@
+prefix: "<gold>"
+messages:
+  no-permission: "<red>У вас нет прав для выполнения этой команды.</red>"
+  player-only: "<red>Эта команда доступна только игроку.</red>"
+  unknown-subcommand: "<red>Неизвестная подкоманда.</red> <gray>Используйте <white>/zbarrier help</white>.</gray>"
+  plugin-disabled: "<yellow>Плагин Zbarrier сейчас отключен в конфиге.</yellow> <gray>Включите <white>settings.plugin-enabled: true</white> и выполните <white>/zbarrier reload</white>.</gray>"
+  debugwhere-result: "<gray>Сервер видит вас так: мир <white><world></white>, измерение <white><key></white>, env <white><env></white>. Граница этого мира: <white><size></white>, центр <white><center></white>. Сравните с <white>/minecraft:worldborder get</white> стоя здесь.</gray>"
+  reloaded: "<green>Конфигурация и сообщения успешно перезагружены.</green>"
+  world-not-found: "<red>Мир <white><world></white> не найден.</red>"
+  invalid-number: "<red>Некорректное число: <value></value>.</red>"
+  invalid-integer: "<red>Некорректное целое число: <value></value>.</red>"
+  invalid-mode: "<red>Некорректный режим: <value></value>. Допустимо: <white>grow, shrink</white>.</red>"
+  dynamic-world-not-allowed: "<red>Динамика отключена для мира <white><world></white> в settings.dynamic-allowed-worlds.</red>"
+  size-out-of-range: "<red>Размер вне допустимых границ: <white><min></white> - <white><max></white>.</red>"
+  size-updated: "<green>Размер границы мира <white><world></white> изменен на <white><size></white>.</green>"
+  warning-updated: "<green>Дистанция предупреждения мира <white><world></white> изменена на <white><distance></white>.</green>"
+  center-updated: "<green>Центр мира <white><world></white> установлен: X=<white><x></white>, Z=<white><z></white>.</green>"
+  center-auto: "<green>Центр мира <white><world></white> переключен в автоматический режим.</green>"
+  world-enabled: "<green>Граница мира <white><world></white> включена.</green>"
+  world-disabled: "<yellow>Граница мира <white><world></white> отключена.</yellow>"
+  warning-near-border: |
+    <gradient:#fafffe:#ff0000>☣ Вы приближаетесь к границе мира.</gradient>
+    <gradient:#fafffe:#ff0000>☣ Осталось <distance> блоков.</gradient>
+  blocked-move: "<red>Вы не можете выйти за пределы границы мира.</red>"
+  blocked-teleport: |
+    <gradient:#fafffe:#ff0000>☣ Телепортация за границу мира запрещена.</gradient>
+  blocked-vehicle: "<gradient:#fafffe:#ff0000>☣ Движение транспорта за границу мира запрещено.</gradient>"
+  dynamic-started: |
+    <gradient:#fafffe:#ff0000>☣ Динамическое изменение границы</gradient>
+    <gradient:#fafffe:#1eff00>☣ Для <world> запущено.</gradient>
+  dynamic-stopped: |
+    <gradient:#fafffe:#ff0000>☣ Динамическое изменение границы</gradient>
+    <gradient:#fafffe:#ff6600>☣ Для <world> остановлено.</gradient>
+  dynamic-updated: "<green>Динамика <white><world></white> обновлена: режим <white><mode></white>, шаг <white><step></white>, интервал <white><interval></white> сек.</green>"
+  barrier-global-grow: |
+    <gradient:#fafffe:#ff0000>☣ Граница мира <world></gradient>
+    <gradient:#fafffe:#73ff00>☣ Увеличена до <size> блоков</gradient>
+  barrier-global-shrink: |
+    &4
+    <gradient:#fafffe:#ff0000>☣ Граница мира <world></gradient>
+    <gradient:#fafffe:#ff9500>☣ Уменьшена до <size> блоков</gradient>
+    &4
+    <gradient:#61e92a:#cb407d>☣ В суботу, вайп сервера...</gradient>
+    <gradient:#7120df:#406d69>☣ Граница будет меняться каждый час</gradient>
+    &4
+  help:
+    - "<gradient:#4be3ff:#2f8fff>Zbarrier команды</gradient>"
+    - "<gray>/zbarrier help</gray> <white>- список команд</white>"
+    - "<gray>/zbarrier reload</gray> <white>- перезагрузка конфигов</white>"
+    - "<gray>/zbarrier debugwhere</gray> <white>- где вы на сервере и размер границы этого мира</white>"
+    - "<gray>/zbarrier setsize <world> <size></gray>"
+    - "<gray>/zbarrier setcenter <world> <x> <z></gray>"
+    - "<gray>/zbarrier setcenterhere [world]</gray>"
+    - "<gray>/zbarrier autocenter <world></gray>"
+    - "<gray>/zbarrier enable <world></gray>"
+    - "<gray>/zbarrier disable <world></gray>"
+    - "<gray>/zbarrier warning <world> <distance></gray>"
+    - "<gray>/zbarrier dynamic <world> <grow|shrink> <step> <intervalSec> <min> <max></gray>"
+    - "<gray>/zbarrier dynamicstop <world></gray>"
