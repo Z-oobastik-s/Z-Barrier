@@ -1,0 +1,50 @@
+plugins {
+    java
+}
+
+group = "ru.zoobastiks.zbarrier"
+version = "1.0.0"
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven("https://repo.papermc.io/repository/maven-public/")
+}
+
+dependencies {
+    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+}
+
+tasks {
+    withType<JavaCompile>().configureEach {
+        options.encoding = "UTF-8"
+        options.release.set(21)
+    }
+
+    jar {
+        archiveBaseName.set("Zbarrier")
+        archiveVersion.set("")
+        archiveClassifier.set("")
+    }
+
+    register<Jar>("shadowJar") {
+        group = "build"
+        description = "Builds plugin jar with shadowJar task name compatibility."
+        archiveBaseName.set("Zbarrier")
+        archiveVersion.set("")
+        archiveClassifier.set("")
+        from(sourceSets.main.get().output)
+        dependsOn(named("classes"))
+    }
+
+    processResources {
+        filesMatching("plugin.yml") {
+            expand(mapOf("version" to project.version))
+        }
+    }
+}
